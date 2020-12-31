@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MoYi&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.moyi.ml/"/>
+  <updated>2020-12-31T11:44:11.224Z</updated>
+  <id>https://blog.moyi.ml/</id>
+  
+  <author>
+    <name>Mo Yi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人主页和博客转移到gitee以及遇到的一些坑</title>
+    <link href="https://blog.moyi.ml/2020/09/26/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E5%92%8C%E5%8D%9A%E5%AE%A2%E8%BD%AC%E7%A7%BB%E5%88%B0gitee%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>https://blog.moyi.ml/2020/09/26/%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%E5%92%8C%E5%8D%9A%E5%AE%A2%E8%BD%AC%E7%A7%BB%E5%88%B0gitee%E4%BB%A5%E5%8F%8A%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91/</id>
+    <published>2020-09-26T02:35:30.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>近来不知道发生了什么，coding pages的访问是越来越慢了，甚至到后来完全都无法连接。<br>本来就是冲着访问速度去的，不然早用github pages了。现在速度比gayhub pages还慢那是完全忍受不了了。遂转移到gitee<br>虽然不能自动编译部署了，但好在访问是真滴流畅。<br>从coding克隆了仓库编译commit push一气呵成，更新部署<br>随后打开，发现MDI图标一个都出不来。。</p><a id="more"></a><p>打开console发现数条类似如下的记录</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access to font at &#39;https:&#x2F;&#x2F;moyiljx.gitee.io&#x2F;static&#x2F;fonts&#x2F;materialdesignicons-webfont.51c686b.ttf&#39; from origin &#39;http:&#x2F;&#x2F;moyiljx.gitee.io&#39; has been blocked by CORS policy: No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource.</span><br></pre></td></tr></table></figure><p>字体文件因为跨域的问题不能加载，但是直接点击控制台出现的链接却又一切正常。<br>搜索了相关错误找到的都是在Nginx配置文件里把Access-Control-Allow-Origin里面字体文件略过<br>但这是码云的服务器啊！明显不行好嘛╮(╯-╰)╭<br>打开gitee pages服务页面，发现只有三个选项</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">部署分支</span><br><span class="line">部署目录</span><br><span class="line">强制使用HTTPS</span><br></pre></td></tr></table></figure><p>上面两个明显没有关系，那就打开HTTPS试一下好了。<br>嗯<br>好了<br>凸(艹皿艹 )</p><p>接下来是博客的问题<br>因为blog放在另外的仓库，访问链接后面要加/blog，所以一开始只能加载出文本，并且各类链接都有乱七八糟的问题<br>修改_config.yml</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://moyiljx.gitee.io/blog</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/blog</span></span><br></pre></td></tr></table></figure><p>大部分资源都可以访问了，但是ayer主题配置的搜索js还是无法加载<br>时间紧张 先不管了<br>能用就行<br>淦</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;近来不知道发生了什么，coding pages的访问是越来越慢了，甚至到后来完全都无法连接。&lt;br&gt;本来就是冲着访问速度去的，不然早用github pages了。现在速度比gayhub pages还慢那是完全忍受不了了。遂转移到gitee&lt;br&gt;虽然不能自动编译部署了，但好在访问是真滴流畅。&lt;br&gt;从coding克隆了仓库编译commit push一气呵成，更新部署&lt;br&gt;随后打开，发现MDI图标一个都出不来。。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>VB+PHP实现在线登录系统</title>
+    <link href="https://blog.moyi.ml/2020/07/05/VB-PHP%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
+    <id>https://blog.moyi.ml/2020/07/05/VB-PHP%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/</id>
+    <published>2020-07-05T06:38:37.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>信息课上老师一直只允许写VB的代码，于是准备用VB整点好活:-P。前几天找了些资料，熟悉了一下各种函数，以PHP为服务器脚本，VB为客户端程序做出来一个登录界面。</p><a id="more"></a><h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><h4 id="UI设计"><a href="#UI设计" class="headerlink" title="UI设计"></a>UI设计</h4><p><img src="http://image.moyi.ml/2020/07/05/loginform.png" alt="登录界面UI"></p><h4 id="函数代码"><a href="#函数代码" class="headerlink" title="函数代码"></a>函数代码</h4><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">'Skin_H</span></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Declare</span> <span class="keyword">Function</span> SkinH_AttachEx <span class="keyword">Lib</span> <span class="string">"SkinH_VB6.dll"</span> (<span class="keyword">ByVal</span> lpSkinFile <span class="keyword">As</span> <span class="built_in">String</span>, <span class="keyword">ByVal</span> lpPasswd <span class="keyword">As</span> <span class="built_in">String</span>) <span class="keyword">As</span> <span class="built_in">Long</span></span><br><span class="line"><span class="comment">'INI</span></span><br><span class="line"><span class="keyword">Option</span> <span class="keyword">Explicit</span></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Declare</span> <span class="keyword">Function</span> GetPrivateProfileString <span class="keyword">Lib</span> <span class="string">"Kernel32"</span> <span class="keyword">Alias</span> <span class="string">"GetPrivateProfileStringA"</span> _</span><br><span class="line">(<span class="keyword">ByVal</span> lpApplicationName <span class="keyword">As</span> <span class="built_in">String</span>, lpKeyName <span class="keyword">As</span> Any, <span class="keyword">ByVal</span> lpDefault <span class="keyword">As</span> <span class="built_in">String</span>, _</span><br><span class="line"><span class="keyword">ByVal</span> lpRetunedString <span class="keyword">As</span> <span class="built_in">String</span>, <span class="keyword">ByVal</span> nSize <span class="keyword">As</span> <span class="built_in">Long</span>, <span class="keyword">ByVal</span> lpFileName <span class="keyword">As</span> <span class="built_in">String</span>) <span class="keyword">As</span> <span class="built_in">Long</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">'读取INI</span></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> GetINI(AppName <span class="keyword">As</span> <span class="built_in">String</span>, KeyName <span class="keyword">As</span> <span class="built_in">String</span>, FileName <span class="keyword">As</span> <span class="built_in">String</span>) <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">   <span class="keyword">Dim</span> retstr <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">   retstr = <span class="built_in">String</span>(<span class="number">255</span>, chr(<span class="number">0</span>))</span><br><span class="line">   GetINI = Left(retstr, GetPrivateProfileString(AppName, <span class="keyword">ByVal</span> KeyName, <span class="string">""</span>, _</span><br><span class="line">              retstr, Len(retstr), FileName))</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br><span class="line"><span class="comment">'切分字符串函数</span></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> SplitStr(str <span class="keyword">As</span> <span class="built_in">String</span>, chr <span class="keyword">As</span> <span class="built_in">String</span>, num <span class="keyword">As</span> <span class="built_in">Integer</span>)</span><br><span class="line">    <span class="keyword">Dim</span> i, flag, count <span class="keyword">As</span> <span class="built_in">Integer</span>, recent <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    SplitStr = <span class="string">""</span>: flag = <span class="number">0</span>: count = <span class="number">1</span></span><br><span class="line">    <span class="keyword">For</span> i = <span class="number">1</span> <span class="keyword">To</span> Len(str)</span><br><span class="line">        recent = <span class="keyword">Mid</span>(str, i, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">If</span> recent &lt;&gt; chr <span class="keyword">And</span> count = num <span class="keyword">Then</span></span><br><span class="line">                SplitStr = SplitStr + <span class="keyword">Mid</span>(str, i, <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">ElseIf</span> recent = chr <span class="keyword">Then</span></span><br><span class="line">                count = count + <span class="number">1</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    <span class="keyword">Next</span> i</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br><span class="line"><span class="comment">'网络请求</span></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> getHTML(strUrl <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line">    <span class="keyword">On</span> <span class="keyword">Error</span> <span class="keyword">Resume</span> <span class="keyword">Next</span></span><br><span class="line">    <span class="keyword">Dim</span> xmlhttp <span class="keyword">As</span> <span class="built_in">Object</span>, stime, ntime</span><br><span class="line">    <span class="keyword">Set</span> xmlhttp = CreateObject(<span class="string">"Microsoft.XMLHTTP"</span>)</span><br><span class="line">    xmlhttp.open <span class="string">"POST"</span>, strUrl, <span class="literal">True</span></span><br><span class="line">    xmlhttp.send</span><br><span class="line">    stime = Now</span><br><span class="line">    <span class="keyword">While</span> xmlhttp.ReadyState &lt;&gt; <span class="number">4</span></span><br><span class="line">    DoEvents</span><br><span class="line">        ntime = Now</span><br><span class="line">        <span class="keyword">If</span> DateDiff(<span class="string">"s"</span>, stime, ntime) &gt; <span class="number">3</span> <span class="keyword">Then</span></span><br><span class="line">            getHTML = <span class="string">""</span></span><br><span class="line">            <span class="keyword">Exit</span> <span class="keyword">Function</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    Wend</span><br><span class="line">    getHTML = StrConv(xmlhttp.responseBody, vbUnicode)</span><br><span class="line">    <span class="keyword">Set</span> xmlhttp = <span class="literal">Nothing</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'点击登录</span></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> CLogin_Click()</span><br><span class="line">    <span class="keyword">Dim</span> url, args, retstr <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">If</span> TUID.<span class="keyword">Text</span> = <span class="string">""</span> <span class="keyword">Or</span> TPassword.<span class="keyword">Text</span> = <span class="string">""</span> <span class="keyword">Then</span> MsgBox (<span class="string">"不可为空"</span>): <span class="keyword">Exit</span> <span class="keyword">Sub</span></span><br><span class="line">    <span class="keyword">If</span> Len(TPassword.<span class="keyword">Text</span>) &lt; <span class="number">6</span> <span class="keyword">Then</span></span><br><span class="line">        MsgBox (<span class="string">"密码太短"</span>)</span><br><span class="line">        <span class="keyword">Exit</span> <span class="keyword">Sub</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    CLogin.Enabled = <span class="literal">False</span></span><br><span class="line">    url = <span class="string">"http://"</span> &amp; GetINI(<span class="string">"config"</span>, <span class="string">"server"</span>, App.Path &amp; <span class="string">"/config.ini"</span>) &amp; <span class="string">"/login"</span></span><br><span class="line">    args = <span class="string">"?uid="</span> &amp; TUID.<span class="keyword">Text</span> &amp; <span class="string">"&amp;password="</span> &amp; TPassword.<span class="keyword">Text</span></span><br><span class="line">    retstr = getHTML(url + args)</span><br><span class="line">    <span class="comment">'奇怪的返回判断增加了！</span></span><br><span class="line">    <span class="keyword">If</span> SplitStr(retstr, <span class="string">"|"</span>, <span class="number">1</span>) = <span class="string">"SUCCESS"</span> <span class="keyword">Then</span></span><br><span class="line">        MainForm.Show <span class="comment">'显示主界面</span></span><br><span class="line">        FLogin.Hide</span><br><span class="line">    <span class="keyword">ElseIf</span> SplitStr(retstr, <span class="string">"|"</span>, <span class="number">1</span>) = <span class="string">"FAILED"</span> <span class="keyword">Then</span></span><br><span class="line">        MsgBox (<span class="string">"失败: "</span> + SplitStr(retstr, <span class="string">"|"</span>, <span class="number">2</span>))</span><br><span class="line">        TPassword.<span class="keyword">Text</span> = <span class="string">""</span></span><br><span class="line">    <span class="keyword">Else</span></span><br><span class="line">        MsgBox (<span class="string">"网络错误"</span>)</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    CLogin.Enabled = <span class="literal">True</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Form_Load()</span><br><span class="line">    SkinH_AttachEx App.Path &amp; <span class="string">"/skin/"</span> &amp; GetINI(<span class="string">"config"</span>, <span class="string">"skin"</span>, App.Path &amp; <span class="string">"/config.ini"</span>), <span class="string">""</span> <span class="comment">'加载皮肤</span></span><br><span class="line">    LVersion.Caption = <span class="string">"v"</span> &amp; GetINI(<span class="string">"config"</span>, <span class="string">"version"</span>, App.Path &amp; <span class="string">"/config.ini"</span>)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Form_Unload(Cancel <span class="keyword">As</span> <span class="built_in">Integer</span>)</span><br><span class="line">    <span class="keyword">End</span> <span class="comment">'结束程序</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure><h4 id="config-ini"><a href="#config-ini" class="headerlink" title="config.ini"></a>config.ini</h4><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[config]</span></span><br><span class="line"><span class="attr">version</span>=<span class="number">0.0</span></span><br><span class="line"><span class="attr">server</span>=localhost</span><br><span class="line"><span class="attr">skin</span>=qqgame.she</span><br></pre></td></tr></table></figure><h4 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h4><p><img src="http://image.moyi.ml/2020/07/05/loginform1.png" alt="登录界面"></p><h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>服务端只是用来检测客户端代码可用性的(lll￢ω￢)就随便瞎写了点</p><h4 id="login-index-php"><a href="#login-index-php" class="headerlink" title="/login/index.php"></a>/login/index.php</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//没有任何技术含量的页面</span></span><br><span class="line"><span class="keyword">if</span>($_REQUEST[<span class="string">'uid'</span>]==<span class="string">"admin"</span> &amp;&amp; $_REQUEST[<span class="string">'password'</span>]==<span class="string">"123456"</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"SUCCESS|testToken"</span>;</span><br><span class="line">    session_start();</span><br><span class="line">    $_SESSION[<span class="string">'name'</span>] = <span class="string">"admin"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;<span class="keyword">echo</span> <span class="string">"FAILED|Something wrong"</span>;&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>这样一个简单的登录就成了，后续就把它应用在别的工程上吧o(<em>￣▽￣</em>)ブ</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;信息课上老师一直只允许写VB的代码，于是准备用VB整点好活:-P。前几天找了些资料，熟悉了一下各种函数，以PHP为服务器脚本，VB为客户端程序做出来一个登录界面。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VB" scheme="https://blog.moyi.ml/categories/VB/"/>
+    
+      <category term="PHP" scheme="https://blog.moyi.ml/categories/VB/PHP/"/>
+    
+    
+      <category term="VB" scheme="https://blog.moyi.ml/tags/VB/"/>
+    
+      <category term="PHP" scheme="https://blog.moyi.ml/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VB6皮肤库skinH</title>
+    <link href="https://blog.moyi.ml/2020/07/05/VB6%E7%9A%AE%E8%82%A4%E5%BA%93skinH/"/>
+    <id>https://blog.moyi.ml/2020/07/05/VB6%E7%9A%AE%E8%82%A4%E5%BA%93skinH/</id>
+    <published>2020-07-05T06:26:43.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>见惯了拥有新设计语言的程序，VB的官方控件真的有些看不下去，就加了个SkinH_VB6.dll来常常换下皮肤让自己看得舒服点awa</p><a id="more"></a><h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><p><a href="http://storage.moyi.ml/2020/07/05/skinH.zip" target="_blank" rel="noopener">点击下载: skinH.zip</a></p><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p>解压skinH_VB6.dll和skin文件夹，放在vb工程根目录下。<br>在代码中加入如下几行即可使用皮肤。</p><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">'Skin_H</span></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Declare</span> <span class="keyword">Function</span> SkinH_AttachEx <span class="keyword">Lib</span> <span class="string">"SkinH_VB6.dll"</span> (<span class="keyword">ByVal</span> lpSkinFile <span class="keyword">As</span> <span class="built_in">String</span>, <span class="keyword">ByVal</span> lpPasswd <span class="keyword">As</span> <span class="built_in">String</span>) <span class="keyword">As</span> <span class="built_in">Long</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Form_Load()</span><br><span class="line">        SkinH_AttachEx App.Path &amp; <span class="string">"/skin/skin.she"</span> , <span class="string">""</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure><h3 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h3><p><img src="http://image.moyi.ml/2020/07/05/skinH_office2007.png" alt="Office2007皮肤"><br>此处使用的是office2007的皮肤，虽然有点老，但胜在更换方便。看腻了就换一个呗233</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;见惯了拥有新设计语言的程序，VB的官方控件真的有些看不下去，就加了个SkinH_VB6.dll来常常换下皮肤让自己看得舒服点awa&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VB" scheme="https://blog.moyi.ml/categories/VB/"/>
+    
+    
+      <category term="VB" scheme="https://blog.moyi.ml/tags/VB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除git的commit记录仅留下当前代码</title>
+    <link href="https://blog.moyi.ml/2020/07/05/%E5%88%A0%E9%99%A4git%E7%9A%84commit%E8%AE%B0%E5%BD%95%E4%BB%85%E7%95%99%E4%B8%8B%E5%BD%93%E5%89%8D%E4%BB%A3%E7%A0%81/"/>
+    <id>https://blog.moyi.ml/2020/07/05/%E5%88%A0%E9%99%A4git%E7%9A%84commit%E8%AE%B0%E5%BD%95%E4%BB%85%E7%95%99%E4%B8%8B%E5%BD%93%E5%89%8D%E4%BB%A3%E7%A0%81/</id>
+    <published>2020-07-05T06:14:53.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>有时候git仓库乱七八糟的东西加了又删太多会导致无法push，因此需要清空一下commit记录</p><a id="more"></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">检出版本</span></span><br><span class="line">git checkout --orphan latest_branch</span><br><span class="line"><span class="meta">#</span><span class="bash">添加文件</span></span><br><span class="line">git add -A</span><br><span class="line"><span class="meta">#</span><span class="bash">提交</span></span><br><span class="line">git commit -am "cleaning"</span><br><span class="line"><span class="meta">#</span><span class="bash">删除master分支</span></span><br><span class="line">git branch -D master</span><br><span class="line"><span class="meta">#</span><span class="bash">重命名当前分支为master</span></span><br><span class="line">git branch -m master</span><br><span class="line"><span class="meta">#</span><span class="bash">推送</span></span><br><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有时候git仓库乱七八糟的东西加了又删太多会导致无法push，因此需要清空一下commit记录&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://blog.moyi.ml/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://blog.moyi.ml/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地在VB6的代码编辑窗口中使用鼠标滚动条</title>
+    <link href="https://blog.moyi.ml/2020/07/05/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%9C%A8VB6%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E7%AA%97%E5%8F%A3%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%BC%A0%E6%A0%87%E6%BB%9A%E5%8A%A8%E6%9D%A1/"/>
+    <id>https://blog.moyi.ml/2020/07/05/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%9C%A8VB6%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91%E7%AA%97%E5%8F%A3%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%BC%A0%E6%A0%87%E6%BB%9A%E5%8A%A8%E6%9D%A1/</id>
+    <published>2020-07-05T05:51:23.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽然很久之前就有说信息教材要改版成python，但是这一届的教材并没有更新，而是等到下一届。所以我们信息技术高考居然还是要考VB…</p><a id="more"></a><p>一开始因为偏见比较排斥VB，没了<code>{}</code>和<code>;</code>总觉得哪里不对，但是没过多久也就习惯了。真正上手之后才发现其实还是有挺多好处的。比如在学校的老爷机上编译速度可比新的VS快上太多了哇！就不用再享受代码改一行、编译几分钟的快乐了（淦）</p><p>但是话说回来，毕竟还是二十多年前的IDE了，总归有一些兼容性bug。比如在代码编辑窗口居然不能用鼠标滚轮滚动？？？</p><p>网上找了找发现都有出现这个bug，接着翻到了微软官方的补丁。</p><p><a href="http://storage.moyi.ml/2020/07/05/VB6IDEMouseWheelAddin.zip" target="_blank" rel="noopener">点击下载: VB6IDEMouseWheelAddin.zip</a></p><p>解压后放到C:\windows\system32里面，接着以管理员模式运行cmd，输入命令</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regsvr32 VB6IDEMouseWheelAddin.dll</span><br></pre></td></tr></table></figure><p>重启VB之后即可愉快地使用滚动条辣！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;虽然很久之前就有说信息教材要改版成python，但是这一届的教材并没有更新，而是等到下一届。所以我们信息技术高考居然还是要考VB…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="VB" scheme="https://blog.moyi.ml/categories/VB/"/>
+    
+    
+      <category term="VB" scheme="https://blog.moyi.ml/tags/VB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次整坏班级电脑的全过程（笑）</title>
+    <link href="https://blog.moyi.ml/2020/06/07/%E4%B8%80%E6%AC%A1%E6%95%B4%E5%9D%8F%E7%8F%AD%E7%BA%A7%E7%94%B5%E8%84%91%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E7%AC%91%EF%BC%89/"/>
+    <id>https://blog.moyi.ml/2020/06/07/%E4%B8%80%E6%AC%A1%E6%95%B4%E5%9D%8F%E7%8F%AD%E7%BA%A7%E7%94%B5%E8%84%91%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B%EF%BC%88%E7%AC%91%EF%BC%89/</id>
+    <published>2020-06-07T03:36:30.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>上周某天晚上忽然就传起来说要分班了，随后班主任也证实了此次并非谣言…很突然地高中第一年愉快相处的同学就要被拆散了啊QwQ…上周末填写了选课表，周三又是很秃然地就分班了（在此吐槽ZHZX的各种迷惑操作）对此大家也是骂声一片但是无可奈何(　ﾟ皿ﾟ)。<br>到了新班级之后也就只有一节晚自习的缓冲时间，第二天一切都是照常进行。新班级辣鸡Odin黑板上的问题倒是不少，C盘剩余空间1G不到，触屏极其不灵敏，以及还用着360安全浏览器等等… 原电教管理不力啊，实在是有些看不下去。本想重装系统，奈何学校却不允许。因此在黑板上摸索着出厂设置选项。</p><a id="more"></a><p>在Boot Menu里面发现Ushendu One key Recovery这个选项，一看就是重置系统用的嘛⊙ω⊙所以就试着打开想看看。启动后就是一个窗口，放着俩按钮：恢复系统和重置系统。本以为里面会有更加细节的选项以及一些提示啊警告啊确认操作啊什么的，就很自然的点了恢复系统。结果，结果，居然直接就进了Ghost开始恢复了(ﾉ ○ Д ○)ﾉ　看着进度条才刚在百分之一左右，状态还是Initize，就当机立断鬼使神差地直接关掉了电源（x_x；）重启之后赫然变成grub&gt;，进不了系统了→_→<br>随后尝试用启动盘修复引导，结果发现c盘文件系统都坏掉了。又没发现可用的系统镜像，没有能用来修复的备用pc，还不允许更换系统，最后就只好最稳的办法：找信息中心了ヽ( ￣д￣;)ノ<br>接下来用黑板的独立Android加上WPS撑了一下午，晚上信息老师就来了。<br>师：什么时候坏的？<br>我：中午<br>师：做过什么操作<br>我：开机的时候强制关机了（似乎没有什么毛病）<br>师：哦<br>然后又是U盘启动一阵整活。各种分区软件上了都没什么卵用，就开始用Ghost重装了。随后发现 D盘居然有镜像！有镜像！(ノ=Д=)ノ┻━┻早知道自己恢复了，就不用麻烦老师了。还不用等这一个下午咧。ヽ( ￣д￣;)ノ<br>恢复完就重新安了下软件，重新投入使用了(●—●)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上周某天晚上忽然就传起来说要分班了，随后班主任也证实了此次并非谣言…很突然地高中第一年愉快相处的同学就要被拆散了啊QwQ…上周末填写了选课表，周三又是很秃然地就分班了（在此吐槽ZHZX的各种迷惑操作）对此大家也是骂声一片但是无可奈何(　ﾟ皿ﾟ)。&lt;br&gt;到了新班级之后也就只有一节晚自习的缓冲时间，第二天一切都是照常进行。新班级辣鸡Odin黑板上的问题倒是不少，C盘剩余空间1G不到，触屏极其不灵敏，以及还用着360安全浏览器等等… 原电教管理不力啊，实在是有些看不下去。本想重装系统，奈何学校却不允许。因此在黑板上摸索着出厂设置选项。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="沙雕, 校园" scheme="https://blog.moyi.ml/tags/%E6%B2%99%E9%9B%95-%E6%A0%A1%E5%9B%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UWP应用无法联网以及代理设置</title>
+    <link href="https://blog.moyi.ml/2020/04/15/UWP%E5%BA%94%E7%94%A8%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/"/>
+    <id>https://blog.moyi.ml/2020/04/15/UWP%E5%BA%94%E7%94%A8%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/</id>
+    <published>2020-04-15T02:17:45.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>某日照例打开小破站的第三方UWP想要寻找快乐，结果却蹦出来个网络连接错误</p><a id="more"></a><img src="https://image.moyi.ml/2020/04/15/bilibili.png" alt="bilibili.png" style="zoom: 67%;" /><p>因为这个UWP不是官方所作，而且之前也遇到过这样的问题，但是过了一天就好了，因此我以为是接口没有更新什么的，就没怎么注意，打开官网直接看网页版了。</p><p>但是晚些时候想研究RSS订阅，看到有推荐微软商店里的NewsFlow，就准备去下载个一探究竟，结果又是无法连接的错误…</p><img src="https://image.moyi.ml/2020/04/15/msstore.png" alt="msstore.png" style="zoom: 67%;" /><p>然后我又天真的以为是微软商店的锅（毕竟微软的网络服务经常不稳定嘛）</p><p>但是当我打开QQ音乐UWP准备放首歌听听：</p><img src="https://image.moyi.ml/2020/04/15/qqmusic.png" alt="qqmusic.png" style="zoom:67%;" /><p>诶诶，这怕我网络是出问题了</p><p>于是我又打开了网易云音乐的UWP版本</p><img src="https://image.moyi.ml/2020/04/15/neteasemusic.png" alt="neteasemusic.png" style="zoom:67%;" /><p>行了，这下确定是我的问题了QwQ</p><p>但是浏览器、QQ什么的一点问题都没有啊。于是只能求助于baidu</p><p>铺天盖地的全都是说要勾选IPV6、更改网络属性为公用、重置网络连接。但是我全部都试了一遍，完全不起作用啊</p><p>于是又准备求助于404小厂，结果发现：代理服务器错误。在向系统托盘一看——woc，我的小飞机呢？崩了！</p><p>行了，这下破案了。因为懒得去设置浏览器代理规则，所以小飞机直接改的是系统代理的PAC模式</p><p><img src="https://image.moyi.ml/2020/04/15/proxy.png" alt="proxy.png"></p><p>结果谁知道小飞机崩了呢，走系统代理的应用就连接不上代理服务器了</p><p>但是为什么浏览器啥的却又都能联网呢？</p><p>搜索了一下发现很多人都有UWP应用无法走代理的情况，原因是</p><p>但是非UWP应用走的本地连接，却是能正常使用的。</p><p>以及如何让UWP应用通过代理访问网络的解决方法也在上面这篇文章找到了答案：</p><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> ws = WScript.<span class="built_in">CreateObject</span>(<span class="string">"wscript.shell"</span>)  </span><br><span class="line">app = ws.ExpandEnvironmentStrings(<span class="string">"%USERPROFILE%\AppData\Local\Packages"</span>)</span><br><span class="line"><span class="keyword">Set</span> fso = WScript.<span class="built_in">CreateObject</span>(<span class="string">"scripting.filesystemobject"</span>)</span><br><span class="line"><span class="keyword">Set</span> fs = fso.GetFolder(app).SubFolders</span><br><span class="line"><span class="keyword">Set</span> bat = fso.createtextfile(ws.ExpandEnvironmentStrings(<span class="string">"%TEMP%\WindowsAppProxyAccess.bat"</span>))  </span><br><span class="line"><span class="keyword">For</span> <span class="keyword">Each</span> f <span class="keyword">In</span> fs  </span><br><span class="line">    bat.WriteLine (<span class="string">"CheckNetIsolation.exe LoopbackExempt -a -n="</span> &amp; f.name)  </span><br><span class="line"><span class="keyword">Next</span>  </span><br><span class="line">bat.WriteLine (<span class="string">"del %0"</span>)  </span><br><span class="line"><span class="built_in">CreateObject</span>(<span class="string">"Shell.Application"</span>).ShellExecute ws.ExpandEnvironmentStrings(<span class="string">"%TEMP%\WindowsAppProxyAccess.bat"</span>),<span class="string">""</span>,<span class="string">""</span>,<span class="string">"runas"</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure><p>运行此VBS脚本即可解除UWP的代理限制。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;某日照例打开小破站的第三方UWP想要寻找快乐，结果却蹦出来个网络连接错误&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="遇到的问题" scheme="https://blog.moyi.ml/categories/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="windows" scheme="https://blog.moyi.ml/categories/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/windows/"/>
+    
+      <category term="网络" scheme="https://blog.moyi.ml/categories/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/windows/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="UWP" scheme="https://blog.moyi.ml/tags/UWP/"/>
+    
+      <category term="无法联网" scheme="https://blog.moyi.ml/tags/%E6%97%A0%E6%B3%95%E8%81%94%E7%BD%91/"/>
+    
+      <category term="SSR" scheme="https://blog.moyi.ml/tags/SSR/"/>
+    
+      <category term="代理" scheme="https://blog.moyi.ml/tags/%E4%BB%A3%E7%90%86/"/>
+    
+      <category term="已解决" scheme="https://blog.moyi.ml/tags/%E5%B7%B2%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>FontAwesome图标显示小方块</title>
+    <link href="https://blog.moyi.ml/2020/04/14/FontAwesome%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA%E5%B0%8F%E6%96%B9%E5%9D%97/"/>
+    <id>https://blog.moyi.ml/2020/04/14/FontAwesome%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA%E5%B0%8F%E6%96%B9%E5%9D%97/</id>
+    <published>2020-04-14T13:09:39.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为之前玩JQuery的时候用的是FontAwesome的图标包，所以这次用Vuetify重写主页用的也是FontAwesome。一开始也都很顺利，home、traffic-light、graduation-cap、birthday-cake等图标的显示都没有任何问题，但是等用到了QQ和steam等品牌图标的时候就出现了问题。并不是不显示或者直接显示文字，而是出现了方框：</p><a id="more"></a><blockquote><p>类似于这个☐</p></blockquote><p>在网上查了一些资料也都没有找到对应的解决方法。有些说是css文件对字体的引用不完全导致的问题，但我引用的是all.css而非fontawesome.js</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'@fortawesome/fontawesome-free/css/all.css'</span></span><br></pre></td></tr></table></figure><p>照理来说应该不会出现没有引入字体的问题。打开all.css也找到了fa-qq和fa-steam，所以应该是字体文件的问题，但后来又尝试把FontAwesome从5.13换成4.7，但仍然是同样的问题。</p><p>由于时间不多，因此也没有深入地探究。</p><p>解决方法很简单粗暴，就是把出现方块的图标包换成了MDI（因为引用的图标没多少，而且两者内容差不多），意外地发现MDI的图标相比FontAwesome似乎更为小巧精致，更加好看些，索性就全部替换成MDI了。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import '@fortawesome/fontawesome-free/css/all.css'</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'@mdi/font/css/materialdesignicons.css'</span></span><br><span class="line">Vue.use(Vuetify)</span><br><span class="line"><span class="keyword">const</span> opts = &#123;</span><br><span class="line">  icons: &#123;</span><br><span class="line">    iconfont: <span class="string">'mdi'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>等有空了再研究研究FontAwesome吧，毕竟以后应该还是会用到的。这个问题暂时先存着233</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为之前玩JQuery的时候用的是FontAwesome的图标包，所以这次用Vuetify重写主页用的也是FontAwesome。一开始也都很顺利，home、traffic-light、graduation-cap、birthday-cake等图标的显示都没有任何问题，但是等用到了QQ和steam等品牌图标的时候就出现了问题。并不是不显示或者直接显示文字，而是出现了方框：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="遇到的问题" scheme="https://blog.moyi.ml/categories/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="前端开发" scheme="https://blog.moyi.ml/categories/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Vuetify" scheme="https://blog.moyi.ml/categories/%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/Vuetify/"/>
+    
+    
+      <category term="FontAwesome" scheme="https://blog.moyi.ml/tags/FontAwesome/"/>
+    
+      <category term="MDI" scheme="https://blog.moyi.ml/tags/MDI/"/>
+    
+      <category term="Vue" scheme="https://blog.moyi.ml/tags/Vue/"/>
+    
+      <category term="Vuetify" scheme="https://blog.moyi.ml/tags/Vuetify/"/>
+    
+      <category term="未解决" scheme="https://blog.moyi.ml/tags/%E6%9C%AA%E8%A7%A3%E5%86%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开始的开始</title>
+    <link href="https://blog.moyi.ml/2020/04/13/%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>https://blog.moyi.ml/2020/04/13/%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BC%80%E5%A7%8B/</id>
+    <published>2020-04-13T07:05:43.000Z</published>
+    <updated>2020-12-31T11:44:11.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>申请的学生服务器被拿去做Minecraft的服务器啦，所以个人网站就没有地方搭建了。于是乎找了找能够建站的地方，发现Netlify和Coding pages都对git提交自动部署有不错的支持(虽然只能静态页面)，就决定放在这两个平台上面。又把之前Freenom过期的域名重新申请了，放弃了之前做的页面而采用Vuetify作为主页，Hexo搭建静态博客，一切都是从零开始了…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;申请的学生服务器被拿去做Minecraft的服务器啦，所以个人网站就没有地方搭建了。于是乎找了找能够建站的地方，发现Netlify和Coding pages都对git提交自动部署有不错的支持(虽然只能静态页面)，就决定放在这两个平台上面。又把之前Freenom过期的域名重新
+      
+    
+    </summary>
+    
+    
+      <category term="日志" scheme="https://blog.moyi.ml/categories/%E6%97%A5%E5%BF%97/"/>
+    
+    
+      <category term="日志" scheme="https://blog.moyi.ml/tags/%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
+  
+</feed>
