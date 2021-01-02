@@ -10,7 +10,7 @@ categories: [VB, PHP]
 ## 内容
 ### 客户端
 #### UI设计
-![登录界面UI](http://image.moyi.ml/2020/07/05/loginform.png)
+![登录界面UI](https://7.dusays.com/2021/01/02/5d7c2d8054a41.png)
 #### 函数代码
 ```vb
 'Skin_H
@@ -108,7 +108,7 @@ skin=qqgame.she
 
 #### 效果图
 
-![登录界面](http://image.moyi.ml/2020/07/05/loginform1.png)
+![登录界面](https://7.dusays.com/2021/01/02/b7cdea031d6e5.png)
 
 ### 服务端
 服务端只是用来检测客户端代码可用性的(lll￢ω￢)就随便瞎写了点

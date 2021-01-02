@@ -8,25 +8,25 @@ copyright: true
 
 某日照例打开小破站的第三方UWP想要寻找快乐，结果却蹦出来个网络连接错误
 <!--more-->
-<img src="https://image.moyi.ml/2020/04/15/bilibili.png" alt="bilibili.png" style="zoom: 67%;" />
+![bilibili.png](https://7.dusays.com/2021/01/02/10cba88a00039.png)
 
 因为这个UWP不是官方所作，而且之前也遇到过这样的问题，但是过了一天就好了，因此我以为是接口没有更新什么的，就没怎么注意，打开官网直接看网页版了。
 
 但是晚些时候想研究RSS订阅，看到有推荐微软商店里的NewsFlow，就准备去下载个一探究竟，结果又是无法连接的错误...
 
-<img src="https://image.moyi.ml/2020/04/15/msstore.png" alt="msstore.png" style="zoom: 67%;" />
+![msstore.png](https://7.dusays.com/2021/01/02/830b7a2faafcb.png)
 
 然后我又天真的以为是微软商店的锅（毕竟微软的网络服务经常不稳定嘛）
 
 但是当我打开QQ音乐UWP准备放首歌听听：
 
-<img src="https://image.moyi.ml/2020/04/15/qqmusic.png" alt="qqmusic.png" style="zoom:67%;" />
+![qqmusic.png](https://7.dusays.com/2021/01/02/63ea313f05b28.png)
 
 诶诶，这怕我网络是出问题了
 
 于是我又打开了网易云音乐的UWP版本
 
-<img src="https://image.moyi.ml/2020/04/15/neteasemusic.png" alt="neteasemusic.png" style="zoom:67%;" />
+![neteasemusic.png](https://7.dusays.com/2021/01/02/0979ed4d8ee40.png)
 
 行了，这下确定是我的问题了QwQ
 
@@ -38,7 +38,7 @@ copyright: true
 
 行了，这下破案了。因为懒得去设置浏览器代理规则，所以小飞机直接改的是系统代理的PAC模式
 
-![proxy.png](https://image.moyi.ml/2020/04/15/proxy.png)
+![proxy.png](https://7.dusays.com/2021/01/02/da272d73bc678.png)
 
 结果谁知道小飞机崩了呢，走系统代理的应用就连接不上代理服务器了
 

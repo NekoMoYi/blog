@@ -14,7 +14,7 @@ categories: VB
 
 网上找了找发现都有出现这个bug，接着翻到了微软官方的补丁。
 
-[点击下载: VB6IDEMouseWheelAddin.zip](http://storage.moyi.ml/2020/07/05/VB6IDEMouseWheelAddin.zip)
+[点击下载: VB6IDEMouseWheelAddin.zip](https://wwi.lanzous.com/idnMtjyh2zc)
 
 解压后放到C:\windows\system32里面，接着以管理员模式运行cmd，输入命令
 
