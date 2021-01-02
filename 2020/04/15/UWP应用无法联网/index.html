@@ -102,26 +102,22 @@
        
   <p>某日照例打开小破站的第三方UWP想要寻找快乐，结果却蹦出来个网络连接错误</p>
 <a id="more"></a>
-<img src="https://image.moyi.ml/2020/04/15/bilibili.png" alt="bilibili.png" style="zoom: 67%;" />
-
+<p><img src="https://7.dusays.com/2021/01/02/10cba88a00039.png" alt="bilibili.png"></p>
 <p>因为这个UWP不是官方所作，而且之前也遇到过这样的问题，但是过了一天就好了，因此我以为是接口没有更新什么的，就没怎么注意，打开官网直接看网页版了。</p>
 <p>但是晚些时候想研究RSS订阅，看到有推荐微软商店里的NewsFlow，就准备去下载个一探究竟，结果又是无法连接的错误…</p>
-<img src="https://image.moyi.ml/2020/04/15/msstore.png" alt="msstore.png" style="zoom: 67%;" />
-
+<p><img src="https://7.dusays.com/2021/01/02/830b7a2faafcb.png" alt="msstore.png"></p>
 <p>然后我又天真的以为是微软商店的锅（毕竟微软的网络服务经常不稳定嘛）</p>
 <p>但是当我打开QQ音乐UWP准备放首歌听听：</p>
-<img src="https://image.moyi.ml/2020/04/15/qqmusic.png" alt="qqmusic.png" style="zoom:67%;" />
-
+<p><img src="https://7.dusays.com/2021/01/02/63ea313f05b28.png" alt="qqmusic.png"></p>
 <p>诶诶，这怕我网络是出问题了</p>
 <p>于是我又打开了网易云音乐的UWP版本</p>
-<img src="https://image.moyi.ml/2020/04/15/neteasemusic.png" alt="neteasemusic.png" style="zoom:67%;" />
-
+<p><img src="https://7.dusays.com/2021/01/02/0979ed4d8ee40.png" alt="neteasemusic.png"></p>
 <p>行了，这下确定是我的问题了QwQ</p>
 <p>但是浏览器、QQ什么的一点问题都没有啊。于是只能求助于baidu</p>
 <p>铺天盖地的全都是说要勾选IPV6、更改网络属性为公用、重置网络连接。但是我全部都试了一遍，完全不起作用啊</p>
 <p>于是又准备求助于404小厂，结果发现：代理服务器错误。在向系统托盘一看——woc，我的小飞机呢？崩了！</p>
 <p>行了，这下破案了。因为懒得去设置浏览器代理规则，所以小飞机直接改的是系统代理的PAC模式</p>
-<p><img src="https://image.moyi.ml/2020/04/15/proxy.png" alt="proxy.png"></p>
+<p><img src="https://7.dusays.com/2021/01/02/da272d73bc678.png" alt="proxy.png"></p>
 <p>结果谁知道小飞机崩了呢，走系统代理的应用就连接不上代理服务器了</p>
 <p>但是为什么浏览器啥的却又都能联网呢？</p>
 <p>搜索了一下发现很多人都有UWP应用无法走代理的情况，原因是</p>
@@ -323,7 +319,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2020
+        2020-2021
         <i class="ri-heart-fill heart_icon"></i> Mo Yi
       </li>
     </ul>
