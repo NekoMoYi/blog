@@ -1,7 +1,7 @@
 ---
 title: UWP应用无法联网以及代理设置
 date: 2020-04-15 10:17:45
-tags: [UWP,无法联网,SSR,代理,已解决]
+tags: [UWP,SSR]
 categories: [遇到的问题,windows,网络]
 copyright: true
 ---

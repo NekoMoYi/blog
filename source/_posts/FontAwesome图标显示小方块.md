@@ -1,7 +1,7 @@
 ---
 title: FontAwesome图标显示小方块
 date: 2020-04-14 21:09:39
-tags: [FontAwesome,MDI,Vue,Vuetify,未解决]
+tags: [FontAwesome,MDI,Vue,Vuetify]
 categories: [遇到的问题,前端开发,Vuetify]
 copyright: true
 ---

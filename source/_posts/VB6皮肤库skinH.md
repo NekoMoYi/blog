@@ -2,7 +2,7 @@
 title: VB6皮肤库skinH
 date: 2020-07-05 14:26:43
 tags: VB
-categories: VB
+categories: [代码, 后端]
 ---
 见惯了拥有新设计语言的程序，VB的官方控件真的有些看不下去，就加了个SkinH_VB6.dll来常常换下皮肤让自己看得舒服点awa
 <!--more-->

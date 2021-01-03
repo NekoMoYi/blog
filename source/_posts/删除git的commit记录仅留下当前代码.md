@@ -1,8 +1,8 @@
 ---
 title: 删除git的commit记录仅留下当前代码
 date: 2020-07-05 14:14:53
-tags: git
-categories: git
+tags: Git
+categories: Git
 ---
 有时候git仓库乱七八糟的东西加了又删太多会导致无法push，因此需要清空一下commit记录
 <!--more-->

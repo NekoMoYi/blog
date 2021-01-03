@@ -1,17 +1,17 @@
 ---
-title: VB+PHP实现在线登录系统
+title: VB+PHP实现登录系统
 date: 2020-07-05 14:38:37
 tags: [VB, PHP]
-categories: [VB, PHP]
+categories: [代码, 后端]
 ---
 ## 起因
 信息课上老师一直只允许写VB的代码，于是准备用VB整点好活:-P。前几天找了些资料，熟悉了一下各种函数，以PHP为服务器脚本，VB为客户端程序做出来一个登录界面。
 <!--more-->
 ## 内容
 ### 客户端
-#### UI设计
+#### UI
 ![登录界面UI](https://7.dusays.com/2021/01/02/5d7c2d8054a41.png)
-#### 函数代码
+##### 代码
 ```vb
 'Skin_H
 Private Declare Function SkinH_AttachEx Lib "SkinH_VB6.dll" (ByVal lpSkinFile As String, ByVal lpPasswd As String) As Long
