@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>70RMB一年的云服务器-HostMem主机食用体验</title>
+    <url>/2021/01/07/70RMB%E4%B8%80%E5%B9%B4%E7%9A%84%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8-HostMem%E4%B8%BB%E6%9C%BA%E9%A3%9F%E7%94%A8%E4%BD%93%E9%AA%8C/</url>
+    <content><![CDATA[<h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>在疫情期间那个很长很长的寒假，每天都在认认真真学(mo)习(yu)，自然学到了很多东西。作为一个还只用过JQuery的前端小白，我接触到了NodeJS、Vue这些上流的东西，了解到了Vuetify这种自带美观样式的UI库。</p>
+<blockquote>
+<p>啊，太上流了!</p>
+</blockquote>
+<p>于是自己建站的想法它又出现了。刚好手上那台原来当做MC服务器的阿里云ECS因为性能太差所以被闲置了，可以拿来利用一下。但是随之我发现了一个很淦的问题：<strong>不能备案。</strong></p>
+<ol>
+<li>未成年人不能备案</li>
+<li>由于现在有的域名是Freenom白嫖的，所以即便把服务器挂到家长名下，还得重新去整域名什么的，备案也要老长一段时间（真麻烦）</li>
+</ol>
+<p>尽管现在像Github Pages， Gitee Pages, Coding Pages这样的免费静态页面托管服务数不胜数，但是只能部署静态页面就限制了好多东西。而我的阿里云ECS带宽只有1M，所以还是想去弄一台国外的服务器。</p>
+<p>遂向<a href="https://zzisu.dev" target="_blank" rel="noopener">ZZS大佬</a>提问： “有没有什么贼便宜的国外服务器” (穷)</p>
+<p>答曰</p>
+<blockquote>
+<p><a href="https://www.hostmem.com/" target="_blank" rel="noopener">HostMem</a></p>
+</blockquote>
+<a id="more"></a>
+<p>然而我拖到现在才冲…</p>
+<h2 id="购买体验"><a href="#购买体验" class="headerlink" title="购买体验"></a>购买体验</h2><p>首先访问官网看看，作为国外的网站速度一般般吧。用Wappalyzer看了下，好家伙，用的Cloudflare。</p>
+<p><img src="https://7.dusays.com/2021/01/07/afc4c0a706d51.png" alt="Cloudflare"></p>
+<p>再接着往下看，是2019年刚做的服务。怪不得之前没怎么听说。</p>
+<p>网站支持中文，好评！</p>
+<p>废话少说，直接去康康价格。</p>
+<p>服务器有两种， 动态云服务器 和 经典云服务器。动态云服务器可以随时升级配置什么的，按量计费。不过创建还需要额外支付$3。<br><img src="https://7.dusays.com/2021/01/07/fa3e5ada499c2.png" alt="动态云服务器价格"></p>
+<p>可以用优惠码，百度了一个,硬件费用七五折。</p>
+<blockquote>
+<p>FW2020</p>
+</blockquote>
+<p>这样计算下来除去部署费用，最低配置（1C+1G+20G）大约14.5RMB每月。</p>
+<p>再看看经典云服务器的价格:<br><img src="https://7.dusays.com/2021/01/07/8543beeff53bf.png" alt="经典云服务器"></p>
+<p>第一个$9.99的显然是最香的， 但是已经被抢光了，所以退而求其次，冲了$12.99一年的。加上优惠码算下来是70RMB/年。还行。</p>
+<p><img src="https://7.dusays.com/2021/01/07/a3753f74e2b52.png" alt="购买页面"></p>
+<p>充值页面支持支付宝和银行卡，再次好评！</p>
+<p><img src="https://7.dusays.com/2021/01/07/7bd7cfc637f7f.png" alt="充值"></p>
+<p><strong>强烈建议先看一下退款须知</strong><br><img src="https://7.dusays.com/2021/01/07/9bece749ff9f3.png" alt="退款须知"></p>
+<p>下单付款一气呵成。</p>
+<h2 id="使用体验"><a href="#使用体验" class="headerlink" title="使用体验"></a>使用体验</h2><h3 id="服务器管理面板"><a href="#服务器管理面板" class="headerlink" title="服务器管理面板"></a>服务器管理面板</h3><p><img src="https://7.dusays.com/2021/01/07/f487c9935f343.png" alt="管理面板"></p>
+<p>有一说一，这个面板的功能确实比阿里云的ECS少了太多。但是够用了。能开机关机，血赚！配色看着挺舒服的，也比较清爽。</p>
+<p>但是右上角的远程连接速度挺慢的，就没去试，直接SSH连接就好。</p>
+<h3 id="网速"><a href="#网速" class="headerlink" title="网速"></a>网速</h3><p>租的时候是晚上，试着用SSH连接下了，结果差点没傻掉。</p>
+<p><strong>SSH连接打个字都有快一秒钟的延迟。速度奇慢无比。</strong></p>
+<p>后来试着安装了个宝塔面板的国际版aaPanel，结果加载了一分钟只出来一个页面结构，CSS样式一点都出不来…这根本不能用好吧。</p>
+<p>后来想了想，大半夜访问美国服务器的似乎这样是正常现象，再加上移动的加持，那也算可以理解。</p>
+<p>等到第二天中午，再试了试，发现速度正常了许多，虽然比不上国内阿里云，但还算阔以。</p>
+<p>测个延迟:<br><img src="https://7.dusays.com/2021/01/07/c010bbe403c9e.png" alt="测速图"></p>
+<p>还算在可以接受的水平吧。</p>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>就1核1G，标准的乞丐性能，不过系统选的Ubuntu Server 20，不跑图形界面的话还是可以流畅运行小型网站，或者是用CloudStudio做一点点远程开发的（虽然加载慢了点，但进去之后体验还算不错）</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>已经在DNSPod把域名解析上去，当做自己的一台小服务器使。之后可以自己做点前后端分离的应用，放一些对带宽和性能要求不大的后端服务（博客后端之类的）在上面，前端就用各种静态页面托管服务放一下，算是一种比较经济的选择。</p>
+]]></content>
+      <categories>
+        <category>服务器</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+        <tag>HostMem</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FontAwesome图标显示小方块</title>
     <url>/2020/04/14/FontAwesome%E5%9B%BE%E6%A0%87%E6%98%BE%E7%A4%BA%E5%B0%8F%E6%96%B9%E5%9D%97/</url>
     <content><![CDATA[<p>因为之前玩JQuery的时候用的是FontAwesome的图标包，所以这次用Vuetify重写主页用的也是FontAwesome。一开始也都很顺利，home、traffic-light、graduation-cap、birthday-cake等图标的显示都没有任何问题，但是等用到了QQ和steam等品牌图标的时候就出现了问题。并不是不显示或者直接显示文字，而是出现了方框：</p>
@@ -142,9 +201,9 @@
 <figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://moyiljx.gitee.io/blog</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/blog</span></span><br></pre></td></tr></table></figure>
 <p>大部分资源都可以访问了，但是ayer主题配置的搜索js还是无法加载<br>时间紧张 先不管了<br>能用就行<br>淦</p>
 ]]></content>
-      <tags>
-        <tag>日志</tag>
-      </tags>
+      <categories>
+        <category>日志</category>
+      </categories>
   </entry>
   <entry>
     <title>删除git的commit记录仅留下当前代码</title>
