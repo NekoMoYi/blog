@@ -1,8 +1,7 @@
 ---
 title: 个人主页和博客转移到gitee以及遇到的一些坑
 date: 2020-09-26 10:35:30
-tags: 日志  
-
+categories: 日志  
 ---
 近来不知道发生了什么，coding pages的访问是越来越慢了，甚至到后来完全都无法连接。
 本来就是冲着访问速度去的，不然早用github pages了。现在速度比gayhub pages还慢那是完全忍受不了了。遂转移到gitee
